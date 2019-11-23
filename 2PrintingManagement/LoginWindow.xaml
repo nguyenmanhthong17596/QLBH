@@ -16,6 +16,8 @@
      FontFamily="{DynamicResource MaterialDesignFont}"
         ResizeMode="NoResize"
         WindowStyle="None"
+        WindowStartupLocation="CenterScreen"
+        Name="loginWindow"
         Title="Đăng nhập" Height="435.787" Width="585.787">
     <Grid>
         <Grid.RowDefinitions>
@@ -23,7 +25,7 @@
             <RowDefinition></RowDefinition> 
         </Grid.RowDefinitions>
         <Grid Grid.Row="0">
-            <uc:ControlBarUC></uc:ControlBarUC>
+            <uc:ControlBarUC Tag="{Binding Title,ElementName=loginWindow}"></uc:ControlBarUC>
         </Grid>
         <materialDesign:Card Grid.Row="1" Width="350" Height="150" HorizontalAlignment="Center" VerticalAlignment="Center">
             <Grid>

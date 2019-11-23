@@ -12,20 +12,87 @@ namespace _2PrintingManagement.ViewModel
     public class ControlBarViewModel : BaseViewModel
     {
         #region commands
-        public ICommand  CloseWindowCommand { get; set; }
+        public ICommand CloseWindowCommand { get; set; }
+        public ICommand MaximizeWindowCommand { get; set; }
+        public ICommand MinimizeWindowCommand { get; set; }
+        public ICommand MouseMoveWindowCommand { get; set; }
         #endregion
 
         public ControlBarViewModel()
         {
-            CloseWindowCommand = new RelayCommand<UserControl>((p)=> { return p == null? false : true; },(p)=> { GetWindowParents(p); });
+            // Handle Close Window
+            CloseWindowCommand = new RelayCommand<UserControl>((p) => { return p == null ? false : true; }, (p) =>
+            {
+                FrameworkElement window = GetWindowParents(p);
+                var w = window as Window;
+                if (w != null)
+                {
+                    w.Close();
+                }
+            }
+            );
+
+            // Handle maximize Windows
+            MaximizeWindowCommand = new RelayCommand<UserControl>((p) => { return p == null ? false : true; }, (p) =>
+            {
+                FrameworkElement window = GetWindowParents(p);
+                var w = window as Window;
+                if (w != null)
+                {
+                    if (w.WindowState != WindowState.Maximized)
+                    {
+                        w.WindowState = WindowState.Maximized;
+                    }
+                    else
+                    {
+                        w.WindowState = WindowState.Normal;
+                    }
+                }
+
+            }
+            );
+
+            // handle minimize window
+            MinimizeWindowCommand = new RelayCommand<UserControl>((p) => { return p == null ? false : true; }, (p) =>
+            {
+                FrameworkElement window = GetWindowParents(p);
+                var w = window as Window;
+                if (w != null)
+                {
+                    if (w.WindowState != WindowState.Minimized)
+                    {
+                        w.WindowState = WindowState.Minimized;
+                    }
+                    else
+                    {
+                        w.WindowState = WindowState.Maximized;
+                    }
+                }
+            }
+             );
+            MouseMoveWindowCommand = new RelayCommand<UserControl>((p) => { return p == null ? false : true; }, (p) =>
+            {
+                FrameworkElement window = GetWindowParents(p);
+                var w = window as Window;
+                if (w != null)
+                {
+                    w.DragMove();
+                }
+            }
+             );
         }
 
-        void GetWindowParents(UserControl p )
+        // Funct get recent window parents to command it as user command
+        FrameworkElement GetWindowParents(UserControl p)
         {
-            FrameworkElement t = p.Parent as FrameworkElement;
+            FrameworkElement parent = p;
 
-            FrameworkElement tt = t.Parent as FrameworkElement;
+            while (parent.Parent != null)
+            {
+                parent = parent.Parent as FrameworkElement;
+            }
+
+            return parent;
         }
     }
 }
-  
