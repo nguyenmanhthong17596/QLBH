@@ -75,7 +75,7 @@
                             </Grid>
                         </Grid>
                     </Button>
-                    <Button Grid.Column="1" ToolTip="Quản lý đơn hàng">
+                    <Button Command="{Binding OutputManagementWindowCommand}" Grid.Column="1" ToolTip="Quản lý đơn hàng">
                         <Grid>
                             <Grid.RowDefinitions>
                                 <RowDefinition></RowDefinition>

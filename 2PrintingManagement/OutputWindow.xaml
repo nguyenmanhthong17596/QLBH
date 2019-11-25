@@ -19,6 +19,7 @@
         WindowStyle="None"
         WindowStartupLocation="CenterScreen"
         
+        Name="window"
         Title="Hóa đơn mua hàng" Height="450" Width="600">
     <Grid>
         <Grid.RowDefinitions>
@@ -46,12 +47,12 @@
                 <!--Customer Information-->
                 <materialDesign:Card Grid.Column="0" >
                     <WrapPanel>
-                        <TextBox Text="{Binding TenKH}" Margin="5 5 15 5" materialDesign:HintAssist.Hint="Tên khách hàng" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
-                        <TextBox Text="{Binding DiaChi}" Margin="5 5 15 5" materialDesign:HintAssist.Hint="Địa chỉ" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
-                        <TextBox Text="{Binding SDT}" Margin="5 5 15 5" materialDesign:HintAssist.Hint="SDT" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
-                        <TextBox Text="{Binding TenCongTy}" Margin="5 5 15 5" materialDesign:HintAssist.Hint="Tên công ty" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
-                        <TextBox Text="{Binding Email}" Margin="5 5 15 5" materialDesign:HintAssist.Hint="Email" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
-                        <TextBox Text="{Binding MST}" Margin="5 5 15 5" materialDesign:HintAssist.Hint="Mã số thuế" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                        <TextBox Text="{Binding TenKH, UpdateSourceTrigger=PropertyChanged}" Margin="5 5 15 5" materialDesign:HintAssist.Hint="Tên khách hàng" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                        <TextBox Text="{Binding DiaChi, UpdateSourceTrigger=PropertyChanged}" Margin="5 5 15 5" materialDesign:HintAssist.Hint="Địa chỉ" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                        <TextBox Text="{Binding SDT, UpdateSourceTrigger=PropertyChanged}" Margin="5 5 15 5" materialDesign:HintAssist.Hint="SDT" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                        <TextBox Text="{Binding TenCongTy, UpdateSourceTrigger=PropertyChanged}" Margin="5 5 15 5" materialDesign:HintAssist.Hint="Tên công ty" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                        <TextBox Text="{Binding Email, UpdateSourceTrigger=PropertyChanged}" Margin="5 5 15 5" materialDesign:HintAssist.Hint="Email" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                        <TextBox Text="{Binding MST, UpdateSourceTrigger=PropertyChanged}" Margin="5 5 15 5" materialDesign:HintAssist.Hint="Mã số thuế" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
                     </WrapPanel>
                 </materialDesign:Card>
 
@@ -89,8 +90,7 @@
                 <WrapPanel>
                     <Button Command="{Binding addCommand}" Content="Thanh toán" Margin="5" Width="110"></Button>
                     <Button Command="{Binding editCommand}" Content="In hóa đơn" Margin="5" Width="110"></Button>
-                    <Button Command="{Binding deleteCommand}" Content="Đơn hàng" Margin="5" Width="110"></Button>
-                    <TextBox Text="{Binding MST}" Width="200" Margin="15 0 15 5" materialDesign:HintAssist.Hint="Số tiền khách trả" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                    <TextBox Text="{Binding MST}" Width="200" Margin="135 0 15 5" materialDesign:HintAssist.Hint="Số tiền khách trả" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
                 </WrapPanel>
             </materialDesign:Card>
 

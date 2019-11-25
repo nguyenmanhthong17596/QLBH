@@ -15,6 +15,7 @@ namespace _2PrintingManagement.ViewModel
         public ICommand CustomerWindowCommand { get; set; }
         public ICommand ImageManagementWindowCommand { get; set; }
         public ICommand OutputWindowCommand { get; set; }
+        public ICommand OutputManagementWindowCommand { get; set; }
 
         // Xử lý mọi thứ trong này 
         public MainViewModel()
@@ -31,6 +32,7 @@ namespace _2PrintingManagement.ViewModel
             CustomerWindowCommand = new RelayCommand<object>((p) => { return true; }, (p) => { CustomerWindow window = new CustomerWindow(); window.ShowDialog(); } );
             ImageManagementWindowCommand = new RelayCommand<object>((p) => { return true; }, (p) => { ImageManagementWindow window = new ImageManagementWindow(); window.ShowDialog(); } );
             OutputWindowCommand = new RelayCommand<object>((p) => { return true; }, (p) => { OutputWindow window = new OutputWindow(); window.ShowDialog(); } );
+            OutputManagementWindowCommand = new RelayCommand<object>((p) => { return true; }, (p) => { ManageOutputWindow window = new ManageOutputWindow(); window.ShowDialog(); } );
         }
     }
 }

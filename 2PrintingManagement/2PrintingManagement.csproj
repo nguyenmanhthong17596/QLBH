@@ -73,6 +73,9 @@
     <Compile Include="ImageManagementWindow.xaml.cs">
       <DependentUpon>ImageManagementWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ListOfCustomerWindow.xaml.cs">
+      <DependentUpon>ListOfCustomerWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="LoginWindow.xaml.cs">
       <DependentUpon>LoginWindow.xaml</DependentUpon>
     </Compile>
@@ -93,6 +96,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ImageManagementWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ListOfCustomerWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
