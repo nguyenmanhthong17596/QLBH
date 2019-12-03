@@ -59,6 +59,7 @@
                         <ColumnDefinition></ColumnDefinition>
                         <ColumnDefinition></ColumnDefinition>
                         <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
                     </Grid.ColumnDefinitions>
                     <Button Grid.Column="0" ToolTip="Thống kê">
                         <Grid>
@@ -74,7 +75,7 @@
                             </Grid>
                         </Grid>
                     </Button>
-                    <Button Grid.Column="1" ToolTip="Quản lý đơn hàng">
+                    <Button Command="{Binding OutputManagementWindowCommand}" Grid.Column="1" ToolTip="Quản lý đơn hàng">
                         <Grid>
                             <Grid.RowDefinitions>
                                 <RowDefinition></RowDefinition>
@@ -88,7 +89,7 @@
                             </Grid>
                         </Grid>
                     </Button>
-                    <Button Grid.Column="2" ToolTip="Khách hàng">
+                    <Button Grid.Column="3" Command="{Binding CustomerWindowCommand}" ToolTip="Khách hàng">
                         <Grid>
                             <Grid.RowDefinitions>
                                 <RowDefinition></RowDefinition>
@@ -102,17 +103,31 @@
                             </Grid>
                         </Grid>
                     </Button>
-                    <Button Grid.Column="3" ToolTip="Công nợ">
+                    <Button Grid.Column="2" Command="{Binding OutputWindowCommand}" ToolTip="Bán hàng">
                         <Grid>
                             <Grid.RowDefinitions>
                                 <RowDefinition></RowDefinition>
                                 <RowDefinition></RowDefinition>
                             </Grid.RowDefinitions>
                             <Grid Grid.Row="0">
-                                <TextBlock HorizontalAlignment="Center" Text="Công nợ"></TextBlock>
+                                <TextBlock HorizontalAlignment="Center" Text="Bán hàng"></TextBlock>
                             </Grid>
                             <Grid Grid.Row="1">
-                                <materialDesign:PackIcon Width="24" Height="24" HorizontalAlignment="Center" Kind="Book" />
+                                <materialDesign:PackIcon Width="24" Height="24" HorizontalAlignment="Center" Kind="CashMultiple" />
+                            </Grid>
+                        </Grid>
+                    </Button>
+                    <Button Command="{Binding ImageManagementWindowCommand}" Grid.Column="4" ToolTip="Quản lý hình ảnh của khách hàng">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition></RowDefinition>
+                                <RowDefinition></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Grid Grid.Row="0">
+                                <TextBlock HorizontalAlignment="Center" Text="Hình ảnh"></TextBlock>
+                            </Grid>
+                            <Grid Grid.Row="1">
+                                <materialDesign:PackIcon Width="24" Height="24" HorizontalAlignment="Center" Kind="Image" />
                             </Grid>
                         </Grid>
                     </Button>
@@ -267,7 +282,8 @@
                             <RowDefinition Height="auto"></RowDefinition>
                             <RowDefinition ></RowDefinition>
                         </Grid.RowDefinitions>
-
+                        
+                        <!--List filter-->
                         <Grid Grid.Row="0" Margin="5">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="auto"></ColumnDefinition>
@@ -292,17 +308,20 @@
                         <Grid Grid.Row="1">
                             <Separator Margin="5"></Separator>
                         </Grid>
-                        
+
+                        <!--List View of ... Something-->
                         <Grid Grid.Row="2">
-                            <ListView>
-                                <ListView.View>
-                                    <GridView>
-                                        <GridViewColumn Header="STT"></GridViewColumn>
-                                        <GridViewColumn Header="Vattu"></GridViewColumn>
-                                        <GridViewColumn Header="So luong"></GridViewColumn>
-                                    </GridView>
-                                </ListView.View>
-                            </ListView>
+                            <ScrollViewer VerticalScrollBarVisibility="Auto">
+                                <ListView>
+                                    <ListView.View>
+                                        <GridView>
+                                            <GridViewColumn Header="STT"></GridViewColumn>
+                                            <GridViewColumn Header="Vattu"></GridViewColumn>
+                                            <GridViewColumn Header="So luong"></GridViewColumn>
+                                        </GridView>
+                                    </ListView.View>
+                                </ListView>
+                            </ScrollViewer>
                         </Grid>
                     </Grid>
                 </materialDesign:Card>

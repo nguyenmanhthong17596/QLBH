@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="1868fdacdd1a4efcaabfa257ea3e9640" Name="Diagram1" ZoomLevel="64">
+        <EntityTypeShape EntityType="SaleManagement2PModel.CongNo" Width="1.5" PointX="3" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SaleManagement2PModel.CT_PX_MH" Width="1.5" PointX="5.25" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SaleManagement2PModel.HinhAnh" Width="1.5" PointX="3" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SaleManagement2PModel.KH" Width="1.5" PointX="0.75" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SaleManagement2PModel.MatHang" Width="1.5" PointX="5.25" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SaleManagement2PModel.PhieuXuat" Width="1.5" PointX="3" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SaleManagement2PModel.sysdiagram" Width="1.5" PointX="7.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SaleManagement2PModel.UserRole" Width="1.5" PointX="7.75" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SaleManagement2PModel.User" Width="1.5" PointX="10" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SaleManagement2PModel.VatTu" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="SaleManagement2PModel.FK__CongNo__IdKH__4BAC3F29" ManuallyRouted="false" />
+        <AssociationConnector Association="SaleManagement2PModel.FK__CT_PX_MH__IdHA__4CA06362" ManuallyRouted="false" />
+        <AssociationConnector Association="SaleManagement2PModel.FK__CT_PX_MH__IdMH__4D94879B" ManuallyRouted="false" />
+        <AssociationConnector Association="SaleManagement2PModel.FK__CT_PX_MH__IdPX__4E88ABD4" ManuallyRouted="false" />
+        <AssociationConnector Association="SaleManagement2PModel.FK__CT_PX_MH__IdVT__4F7CD00D" ManuallyRouted="false" />
+        <AssociationConnector Association="SaleManagement2PModel.FK__HinhAnh__IdKH__5070F446" ManuallyRouted="false" />
+        <AssociationConnector Association="SaleManagement2PModel.FK__MatHang__IdHA__5165187F" ManuallyRouted="false" />
+        <AssociationConnector Association="SaleManagement2PModel.FK__PhieuXuat__IdKH__534D60F1" ManuallyRouted="false" />
+        <AssociationConnector Association="SaleManagement2PModel.FK__MatHang__IdVT__52593CB8" ManuallyRouted="false" />
+        <AssociationConnector Association="SaleManagement2PModel.FK__Users__IdRoles__5441852A" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
