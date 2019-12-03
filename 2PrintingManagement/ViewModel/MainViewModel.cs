@@ -1,4 +1,5 @@
-﻿using System;
+﻿using _2PrintingManagement.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -33,6 +34,10 @@ namespace _2PrintingManagement.ViewModel
             ImageManagementWindowCommand = new RelayCommand<object>((p) => { return true; }, (p) => { ImageManagementWindow window = new ImageManagementWindow(); window.ShowDialog(); } );
             OutputWindowCommand = new RelayCommand<object>((p) => { return true; }, (p) => { OutputWindow window = new OutputWindow(); window.ShowDialog(); } );
             OutputManagementWindowCommand = new RelayCommand<object>((p) => { return true; }, (p) => { ManageOutputWindow window = new ManageOutputWindow(); window.ShowDialog(); } );
+
+            //MessageBox.Show(DataProvider.Ins.DB.Users.First().HoTen);
+        
         }
     }
 }
+ 
